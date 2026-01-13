@@ -1,0 +1,21 @@
+
+body{
+    background-color: gray;
+}
+
+.clock{
+    background-color: palegoldenrod;
+    width: 170px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.digitalclock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
