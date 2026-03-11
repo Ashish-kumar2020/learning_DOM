@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window</title>
+  </head>
+  <body>
+    <ul class="list">
+
+    </ul>
+    <script>
+      // let ids = setInterval(()=>{
+      //     console.log("Every 1 sec")
+      // },1000);
+      // clearInterval(ids)
+
+      function animate() {
+        console.log("Animate");
+        requestAnimationFrame(animate);
+      }
+      // requestAnimationFrame(animate);
+
+      // window.location.href = "https://chatgpt.com/c/696fb69c-3bf0-8323-8c8d-a56db1a3321d"
+      // window.location.reload()
+      // window.history.forward();
+      // console.log(navigator.geolocation)
+      let list = document.querySelector(".list");
+    //   for (let i = 0; i < 1000; i++) {
+    //     const li = document.createElement("li");
+    //     li.textContent = i;
+    //     list.appendChild(li);
+    //   }
+    const frag = document.createDocumentFragment();
+
+for (let i = 0; i < 1000; i++) {
+  const li = document.createElement("li");
+  li.textContent = i;
+  frag.appendChild(li);
+}
+
+list.appendChild(frag); // only 1 reflow
+
+    </script>
+  </body>
+</html>

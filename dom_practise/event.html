@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evenet Bubbling and Capturing</title>
+  </head>
+  <style>
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .green {
+      width: 400px;
+      height: 300px;
+      background-color: green;
+    }
+    .pink {
+      width: 300px;
+      height: 200px;
+      background-color: pink;
+    }
+    .blue {
+      width: 200px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
+  <body>
+    <!-- <div class="green">
+      <div class="pink">
+        <div class="blue"></div>
+      </div>
+    </div> -->
+
+    <input id="name" />
+
+    <button id="btn">Click me</button>
+    <script>
+    //   const green = document.querySelector(".green");
+    //   const pink = document.querySelector(".pink");
+    //   const blue = document.querySelector(".blue");
+
+      //   Event Bubbling
+      // if we click any of the child element then it will also trigge its parent element as well;in this it gets from child to parent
+      // Parent Structure -> body -> Document -> window
+
+      // Event Capturing - it is same as event bubbling but in this the capturing starts from parent to child
+      //once: true - if we want one button is clicked on one time then we use once: true
+    //   green.addEventListener(
+    //     "click",
+    //     (e) => {
+    //       e.stopPropagation();
+    //       console.log("Green Button Clicked");
+    //     },
+    //     { capture: true, once: true },
+    //   );
+
+    //   pink.addEventListener(
+    //     "click",
+    //     () => {
+    //       console.log("Pink Button Clicked");
+    //     },
+    //     { capture: true },
+    //   );
+      //   blue.addEventListener("click", () => {
+      //     console.log("Blue Button Clicked");
+      //   },{capture : true});
+      //   document.body.addEventListener("click", () => {
+      //     console.log("Body Button Clicked");
+      //   },{capture : true});
+      //   window.addEventListener("click", () => {
+      //     console.log("Window Button Clicked");
+      //   },{capture : true});
+      //   document.addEventListener("click", () => {
+      //     console.log("Document Button Clicked");
+      //   },{capture : true});
+
+      const btn = document.querySelector("#btn");
+
+     btn.addEventListener(
+        "click",
+        (e) => {
+          e.stopPropagation();
+          console.log("Green Button Clicked");
+        },
+        { capture: true, once: true },
+      );
+      const input = document.getElementById("name");
+
+input.addEventListener("input", (e) => {
+  console.log(e.target.value);
+});
+
+const email = document.getElementById("email");
+
+email.addEventListener("change", (e) => {
+  console.log("Final value:", e.target.value);
+});                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+    </script>
+  </body>
+</html>

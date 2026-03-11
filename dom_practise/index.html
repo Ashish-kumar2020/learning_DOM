@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_Practise</title>
+</head>
+<body>
+    <div id="container">
+        <button id="btn">Click me</button>
+    </div>
+
+    <script>
+
+        const handleClick = (e)=>{
+            // console.log("Button Clicked",e.target.tagName === "BUTTON");
+            if(e.target.tagName === "BUTTON"){
+                console.log("Button clicked");
+            }
+        }
+
+        const container = document.querySelector("#container");
+        const btn = document.querySelector("#btn");
+        btn.addEventListener("click", handleClick);
+        //  btn.removeEventListener("click", handleClick)
+        window.addEventListener("resize", ()=>{
+            console.log("Window is resized")
+        })
+    </script>
+</body>
+</html>
